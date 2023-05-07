@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  height: 116px;
+  padding: 0 30px;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+}
+.social p {
+  margin-right: 2rem;
+}
+.social p span {
+  color: #ee436e;
+}
+.logo {
+  width: 134px;
+  height: 140.09px;
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+}
+.logoText {
+  margin-top: 2rem;
+}
+.header p {
+  margin: 0;
+  text-align: right;
+  font-size: 16px;
+  line-height: 19px;
+  color: #005382;
+}
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 29px 100px 0 100px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(9, 134px);
+  grid-template-rows: repeat(11, 134px);
+  width: 100%;
+  gap: 10px;
+  grid-auto-flow: dense;
+  padding: 1rem;
+}
+
+.multiplayerCard {
+  grid-column-start: 7;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.categoryGrid {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 9; /* Bu satırı 10'dan 9'a değiştirin */
+  /* margin-bottom: 33px; Bu satırı kaldırın */
+}
+.categoryCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottomGrid {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 10; /* Bu satırı 11'den 10'a değiştirin */
+  grid-row-end: 12;
+}
+.bottomGridItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
