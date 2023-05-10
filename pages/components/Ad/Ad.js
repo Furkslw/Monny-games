@@ -3,7 +3,7 @@ import React from "react";
 const Ad = ({ src }) => {
   return (
     <div>
-      <img src={src} alt="Advertisement" />
+      <img src={src} />
     </div>
   );
 };

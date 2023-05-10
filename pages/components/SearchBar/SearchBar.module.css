@@ -39,3 +39,9 @@
   position: absolute;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1154px) {
+  .search {
+    display: none;
+  }
+}

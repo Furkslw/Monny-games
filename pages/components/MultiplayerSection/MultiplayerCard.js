@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./MultiplayerCard.module.css";
 import GameCard from "./GameCard";
 
 const MultiplayerCard = () => {
   const [page, setPage] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3);
 
   const games = [
     // Örnek oyunlar, gerçek verilerle değiştirilebilir
@@ -20,8 +21,28 @@ const MultiplayerCard = () => {
   };
 
   const handleNext = () => {
-    setPage(Math.min(Math.ceil(games.length / 3) - 1, page + 1));
+    setPage(Math.min(Math.ceil(games.length / cardsToShow) - 1, page + 1));
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 500) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.card}>
@@ -37,9 +58,11 @@ const MultiplayerCard = () => {
         </div>
       </div>
       <div className={styles.gameCards}>
-        {games.slice(page * 3, page * 3 + 3).map((game, index) => (
-          <GameCard key={index} image={game.image} title={game.title} />
-        ))}
+        {games
+          .slice(page * cardsToShow, page * cardsToShow + cardsToShow)
+          .map((game, index) => (
+            <GameCard key={index} image={game.image} title={game.title} />
+          ))}
       </div>
     </div>
   );

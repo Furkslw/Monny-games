@@ -1,10 +1,22 @@
-.nav {
+.navbar {
   background-color: #ee436e;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 49px;
   width: 100%;
+  padding: 0 0;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  padding-left: 50px;
+  position: relative;
 }
 
 .nav ul {
@@ -14,9 +26,19 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
 }
+
 .nav li {
   height: 100%;
+  width: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav a {
@@ -24,15 +46,13 @@
   padding: 10px 15px;
   color: #ffffff;
   text-decoration: none;
-  width: 195px;
-  align-items: center;
+  width: 100%;
   text-align: center;
   font-family: "Fredoka One";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
-  text-align: center;
 }
 
 .nav a:hover {
@@ -85,4 +105,107 @@
 .sportsicon {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 1670px) {
+  .nav li {
+    width: 150px;
+  }
+
+  .nav a {
+    font-size: 22px;
+  }
+
+  .homeicon {
+    width: 19px;
+    height: 18px;
+  }
+
+  .popularicon {
+    width: 20px;
+    height: 17px;
+  }
+
+  .IOicon {
+    width: 19px;
+    height: 20px;
+  }
+
+  .gunicon {
+    width: 24px;
+    height: 19px;
+  }
+
+  .girlsicon {
+    width: 14px;
+    height: 17px;
+  }
+
+  .racingicon {
+    width: 20px;
+    height: 16px;
+  }
+
+  .sportsicon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .nav li {
+    width: 120px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+
+  .homeicon {
+    width: 17px;
+    height: 16px;
+  }
+
+  .popularicon {
+    width: 18px;
+    height: 15px;
+  }
+
+  .IOicon {
+    width: 17px;
+    height: 18px;
+  }
+  .gunicon {
+    width: 22px;
+    height: 17px;
+  }
+
+  .girlsicon {
+    width: 12px;
+    height: 15px;
+  }
+
+  .racingicon {
+    width: 18px;
+    height: 14px;
+  }
+
+  .sportsicon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 1154px) {
+  .nav li {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 100%;
+    height: 31px;
+    padding-left: 0;
+  }
 }

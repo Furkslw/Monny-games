@@ -1,4 +1,5 @@
 .categoryCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +23,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background: #fff;
   align-items: center;
   width: 100%;
@@ -39,7 +41,6 @@
   grid-template-columns: repeat(2, 98px);
   grid-template-rows: repeat(5, 98px);
   margin-top: 2.5rem;
-
   gap: 15.37px;
   width: 100%;
   height: 518px;
@@ -47,12 +48,12 @@
 }
 .gridSection {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   border-radius: 0 0 10px 10px;
-
   overflow: hidden;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox için */
@@ -86,4 +87,62 @@
 .categoryIcon {
   width: 21px;
   height: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .categoryCard {
+    width: 100vw;
+    height: 100%;
+  }
+  .gameGridItems {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 102.57px);
+    grid-template-rows: repeat(5, 102.6px);
+  }
+  .categoryCard img {
+    width: 102.57px;
+    height: 102.6px;
+  }
+}
+
+/* Button Queries*/
+.viewAllButton {
+  display: none;
+  background-color: #ee436e;
+  color: white;
+  width: 219px;
+  height: 44px;
+  border: 2px solid white;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  align-items: center;
+  justify-self: flex-end;
+  position: absolute;
+  line-height: 40px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 18px;
+  bottom: -1px;
+}
+.gridAndButtonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 9;
+}
+
+@media screen and (max-width: 500px) {
+  .viewAllButton {
+    display: block;
+  }
 }

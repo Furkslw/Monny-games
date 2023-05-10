@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./CategoryCard.module.css";
 
-const CategoryCard = ({ categoryTitle, games, categoryIcon, iconSize }) => {
-  const handleClick = (gameLink) => {
-    window.location.href = gameLink;
+const CategoryCard = ({
+  categoryTitle,
+  games,
+  categoryIcon,
+  iconSize,
+  categoryLink,
+}) => {
+  const handleClick = (link) => {
+    window.location.href = link;
   };
 
   return (
@@ -20,18 +26,28 @@ const CategoryCard = ({ categoryTitle, games, categoryIcon, iconSize }) => {
         />
         <h2 className={styles.categoryTitle}>{categoryTitle}</h2>
       </div>
-      <div className={styles.gridSection}>
-        <div className={styles.gameGridItems}>
-          {games.map((game) => (
+      <div className={styles.gridAndButtonContainer}>
+        <div className={styles.gridSection}>
+          <div className={styles.gameGridItems}>
+            {games.map((game) => (
+              <div
+                key={game.id}
+                className={styles.gridItem}
+                onClick={() => handleClick(game.gameLink)}
+              >
+                <img src={game.imageUrl} alt={game.gameTitle} />
+                <div className={styles.titleOverlay}>{game.gameTitle}</div>
+              </div>
+            ))}
+          </div>
+          <div className={styles.buttonContainer}>
             <div
-              key={game.id}
-              className={styles.gridItem}
-              onClick={() => handleClick(game.gameLink)}
+              className={styles.viewAllButton}
+              onClick={() => handleClick(categoryLink)}
             >
-              <img src={game.imageUrl} alt={game.gameTitle} />
-              <div className={styles.titleOverlay}>{game.gameTitle}</div>
+              View All
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

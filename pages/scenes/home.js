@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Logo from "../components/Logo/Logo";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Navbar from "../components/Navbar/Navbar";
@@ -8,7 +9,10 @@ import styles from "../index.module.css";
 import GameGridItem from "../components/GameGridItem/GameGridItem";
 import MultiplayerCard from "../components/MultiplayerSection/MultiplayerCard";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
+import BottomGrid from "../components/BottomGrid/BottomGrid";
+
 const Home = () => {
+  /* DATA */
   const games = [
     {
       id: 1,
@@ -130,6 +134,76 @@ const Home = () => {
       category: "IO",
     },
     {
+      id: 60,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 59,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 58,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 57,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 56,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 55,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 54,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 53,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 52,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
+      id: 51,
+      imageUrl: "/game1.png",
+      gameTitle: "Game 1",
+      gameLink: "/game1",
+      category: "IO",
+    },
+    {
       id: 18,
       imageUrl: "/game2.png",
       gameTitle: "Game 2",
@@ -185,48 +259,7 @@ const Home = () => {
       gameLink: "/game1",
       category: "IO",
     },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
-    {
-      id: 26,
-      imageUrl: "/game1.png",
-      gameTitle: "Game 1",
-      gameLink: "/game1",
-      category: "IO",
-    },
+
     {
       id: 27,
       imageUrl: "/game2.png",
@@ -296,30 +329,129 @@ const Home = () => {
     },
   ];
 
+  /* Ekran çözünürlüğüne göre göre menü bar */
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 1154);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  /* Gridlerin ekran boyutuna göre Kaç grid olacağına dair state */
+  const [itemsToShow, setItemsToShow] = React.useState(30);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      switch (true) {
+        case width <= 500:
+          setItemsToShow(15);
+          break;
+        case width <= 945:
+          setItemsToShow(5);
+          break;
+        case width <= 1150:
+          setItemsToShow(10);
+          break;
+        case width <= 1330:
+          setItemsToShow(15);
+          break;
+        case width <= 1615:
+          setItemsToShow(20);
+          break;
+        case width <= 1743:
+          setItemsToShow(25);
+          break;
+        default:
+          setItemsToShow(30);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  /* BottomGrid'in ekran boyutuna göre Kaç grid olacağına dair state */
+  const [bottomItemCount, setBottomItemCount] = useState(9);
+
+  useEffect(() => {
+    const updateBottomItemCount = () => {
+      if (window.innerWidth <= 1140) {
+        setBottomItemCount(4);
+      } else if (window.innerWidth <= 1340) {
+        setBottomItemCount(6);
+      } else if (window.innerWidth <= 1615) {
+        setBottomItemCount(7);
+      } else if (window.innerWidth <= 1743) {
+        setBottomItemCount(8);
+      }
+    };
+
+    window.addEventListener("resize", updateBottomItemCount);
+
+    // Component unmount olduğunda event listener'ı temizle
+    return () => {
+      window.removeEventListener("resize", updateBottomItemCount);
+    };
+  }, []);
+
   return (
     <>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <Logo />
+          <img src="/logo.png" alt="logo" width={134} height={140.09} />
           <div className={styles.logoText}>
-            <LogoText />
+            <img
+              src="/ponny-games-text.png"
+              alt="logoText"
+              width={147.67}
+              height={70.43}
+            />
           </div>
         </div>
         <div className={styles.logoText}></div>
         <div className={styles.social}>
-          <p>
-            Play games at <span>ponyygame.com</span>
-            <br />
-            Every day you can find the newest and best games on this website!
-          </p>
-          <SearchBar />
+          {!isSmallScreen && (
+            <>
+              <p>
+                Play games at <span>ponyygame.com</span>
+                <br />
+                Every day you can find the newest and best games on this
+                website!
+              </p>
+              <SearchBar />
+            </>
+          )}
+          {isSmallScreen && (
+            <>
+              <div className={styles.buttons}>
+                <img src="/search.png" alt="search" />
+                <img src="/menu.png" alt="menu" width={50} height={20} />
+              </div>
+            </>
+          )}
         </div>
       </header>
       <Navbar />
       <main className={styles.main}>
-        <Ad src="/ad.png" />
+        {window.innerWidth > 1343 && (
+          <div className="ad">
+            <Ad src="/ad.png" />
+          </div>
+        )}
         <div className={styles.gridContainer}>
-          {games.slice(0, 30).map((game, index) => (
+          {games.slice(0, itemsToShow).map((game, index) => (
             <GameGridItem
               key={index}
               imageUrl={game.imageUrl}
@@ -327,37 +459,63 @@ const Home = () => {
               gameLink={game.gameLink}
             />
           ))}
-          <div className={`${styles.multiplayerCard}`}>
-            <MultiplayerCard />
+          <div className={styles.multiplayerCardSection}>
+            <div className={`${styles.multiplayerCard}`}>
+              <MultiplayerCard />
+            </div>
           </div>
-          <div className={styles.categoryGrid}>
-            <div className={styles.categoryCard}>
+          <div className={styles.categorySection}>
+            <div className={styles.categoryGrid}>
               {categories.map((category) => (
-                <CategoryCard
-                  key={category.title}
-                  categoryTitle={category.title}
-                  games={category.games}
-                  categoryIcon={category.categoryIcon}
-                  iconSize={category.iconSize}
-                />
+                <div className={styles.categoryCard} key={category.title}>
+                  <CategoryCard
+                    categoryTitle={category.title}
+                    games={category.games}
+                    categoryIcon={category.categoryIcon}
+                    iconSize={category.iconSize}
+                  />
+                </div>
               ))}
             </div>
           </div>
-          <div className={styles.bottomGrid}>
-            <div className={styles.bottomGridItem}>
-              {games.slice(0, 9).map((game, index) => (
-                <GameGridItem
-                  key={index}
-                  imageUrl={game.imageUrl}
-                  gameTitle={game.gameTitle}
-                  gameLink={game.gameLink}
-                />
-              ))}
-            </div>
-          </div>
+          {isSmallScreen && (
+            <>
+              <div className={styles.bottomResGrid}>
+                <div className={styles.bottomResGridItem}>
+                  {games.slice(0, itemsToShow).map((game, index) => (
+                    <GameGridItem
+                      key={index}
+                      imageUrl={game.imageUrl}
+                      gameTitle={game.gameTitle}
+                      gameLink={game.gameLink}
+                    />
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+          {!isSmallScreen && (
+            <>
+              <div className={styles.bottomGrid}>
+                <div className={styles.bottomGridItem}>
+                  {games.slice(0, bottomItemCount).map((game, index) => (
+                    <GameGridItem
+                      key={index}
+                      imageUrl={game.imageUrl}
+                      gameTitle={game.gameTitle}
+                      gameLink={game.gameLink}
+                    />
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
-
-        <Ad src="/ad.png" />
+        {window.innerWidth > 1460 && (
+          <div className="ad">
+            <Ad src="/ad.png" />
+          </div>
+        )}
       </main>
     </>
   );

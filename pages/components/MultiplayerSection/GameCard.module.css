@@ -29,3 +29,10 @@
 .card:hover .title {
   opacity: 1;
 }
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 302px;
+    height: 155px;
+  }
+}
