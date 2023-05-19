@@ -8,16 +8,7 @@ const useFetchCategories = () => {
   let domainId = 16;
   const category_url = `${server}/api/v1/categories?domain_id=${domainId}`;
 
-  useEffect(() => {
-    axios
-      .get(category_url)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+  useEffect(() => {}, []);
   return categories;
 };
 

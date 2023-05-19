@@ -5,7 +5,9 @@ const nextConfig = {
 
 module.exports = {
   reactStrictMode: true,
-
+  env: {
+    HUMOQ_API_URL: "https://apiv3.humoq.com/api/v1",
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.css$/,

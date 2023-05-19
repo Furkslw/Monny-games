@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
 import GameGridItem from "../GameGridItem/GameGridItem";
-import useFetchGames from "@/pages/hooks/useFetchGames";
-import useFetchImage from "@/pages/hooks/useFetchImage";
 
-const GameGrid = ({ itemsToShow }) => {
-  const games = useFetchGames();
+const GameGrid = ({ itemsToShow, games }) => {
+  const [gamesToRender, setGamesToRender] = useState(null);
+  useEffect(() => {
+    console.log("Games length: ", games?.length, "Games type", typeof games);
+    if (games.length && games.length !== 0) {
+      const temp = games.slice(0, itemsToShow);
+
+      setGamesToRender(temp);
+    }
+  }, [games]);
 
   return (
     <>
-      {games.slice(0, itemsToShow).map((game) => (
-        <GameGridItem
-          key={game.id}
-          imageUrl={"/game1.png"}
-          gameTitle={game.title}
-          gameLink={`/scenes/game/${game.slug}`}
-        />
-      ))}
+      {gamesToRender &&
+        gamesToRender.map((game) => (
+          <GameGridItem
+            key={game.id}
+            slug={game.slug}
+            gameTitle={game.title}
+            gameLink={`/scenes/game/${game.slug}?id=${game.id}`}
+          />
+        ))}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { GameContext } from "../contexts/GameContext";
 import Header from "../components/Header/Header";
 import styles from "../styles/Home.module.css";
@@ -16,8 +16,22 @@ import useFetchImage from "../hooks/useFetchImage";
 const Home = () => {
   /* Context'ten gelen oyun ve kategori bilgileri */
   const { categories } = useContext(GameContext);
-  const { games, loading } = useFetchGames();
-  const imageUrl = useFetchImage();
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { getGames } = useFetchGames();
+
+  useEffect(() => {
+    setLoading(true);
+    getGames().then((response) => {
+      const { data } = response;
+      console.log("Response : ", response);
+      if (data.data) {
+        setGames(data.data);
+        setLoading(false);
+      }
+    });
+  }, []);
+
   const isSmallScreenForGrid = useWindowSize();
 
   const bottomBreakPoints = {
