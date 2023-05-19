@@ -1,48 +1,15 @@
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  height: 116px;
-  padding: 0 30px;
-}
-.social {
-  display: flex;
-  justify-content: space-between;
-}
-.social p {
-  margin-right: 2rem;
-}
-.social p span {
-  color: #ee436e;
-}
-.logo {
-  margin-top: 3rem;
-  z-index: 9;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.logo img {
-  max-width: 134px;
-  max-height: 140.09px;
-}
-.logoText {
-  margin-top: 1.6rem;
-}
-.header p {
-  margin: 0;
-  text-align: right;
-  font-size: 16px;
-  line-height: 19px;
-  color: #005382;
-}
 .main {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 29px 100px 0 100px;
+}
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .gridContainer {
@@ -62,7 +29,12 @@
   grid-row-start: 1;
   grid-row-end: 5;
 }
-
+.categorySection {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
 .categoryGrid {
   grid-column-start: 1;
   grid-column-end: 10;
@@ -71,8 +43,6 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
-
-  /* margin-bottom: 33px; Bu satırı kaldırın */
 }
 .categoryCard {
   display: flex;
@@ -115,6 +85,12 @@
     grid-row-start: 1;
     grid-row-end: 5;
   }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
   .categoryGrid {
     grid-column-start: 1;
     grid-column-end: 9;
@@ -132,16 +108,6 @@
     grid-row-start: 10;
     grid-row-end: 12;
   }
-  .logo {
-    z-index: 9;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-  .social p {
-    font-size: 14px;
-  }
 }
 
 @media screen and (max-width: 1615px) {
@@ -157,6 +123,12 @@
     grid-column-end: 8;
     grid-row-start: 1;
     grid-row-end: 5;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 9;
   }
   .categoryGrid {
     grid-column-start: 1;
@@ -186,6 +158,12 @@
     grid-row-start: 1;
     grid-row-end: 5;
   }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
   .categoryGrid {
     grid-column-start: 1;
     grid-column-end: 7;
@@ -213,6 +191,12 @@
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 5;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
   }
   .categoryGrid {
     grid-column-start: 1;
@@ -243,7 +227,33 @@
     grid-row-end: 20;
   }
 }
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 29px 10px 0 10px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(3, 134px);
+    grid-template-rows: repeat(20, 134px);
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 25;
+    grid-row-start: 19;
+    grid-row-end: 20;
+  }
+}
 
+@media screen and (max-width: 1650px) {
+  .adBot {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .adTop {
+    display: none;
+  }
+}
 /* CategoryCard MediaQueries */
 @media screen and (max-width: 1743px) {
   .categoryGrid {
@@ -284,51 +294,20 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .categoryGrid {
+    grid-template-columns: 1;
+    grid-template-rows: 5;
+  }
+}
+
 /* Mobile responsive */
 
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-.buttons img {
-  padding: 0 15px;
-}
-
 @media screen and (max-width: 500px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 18px;
-    height: 70px;
-  }
   .main {
     padding: 10px 0;
   }
-  .logo {
-    margin-top: 0;
-  }
-  .logo img {
-    margin-top: 2rem;
-    margin-left: 0;
-    width: 81.31px;
-    height: 85px;
-  }
-  .logoText img {
-    width: 89.6px;
-    height: 42.74px;
-  }
-  .logoText {
-    margin-top: 1rem;
-  }
-  .buttons img {
-    width: 50px;
-    height: 20px;
-  }
+
   .gridContainer {
     display: grid;
     justify-content: center;
@@ -389,5 +368,34 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 8px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .gridContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 70.57px);
+    grid-template-rows: repeat(44, 70.6px);
+    width: 100%;
+    gap: 10px;
+    grid-auto-flow: dense;
+    padding: 0;
+  }
+  .bottomResGrid {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 11;
+    grid-row-end: 17;
+  }
+  .categorySection {
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 17;
+    grid-row-end: 45;
+  }
+  .multiplayerCard {
+    width: 100%;
+    height: 100%;
   }
 }

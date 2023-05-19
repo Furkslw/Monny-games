@@ -1,0 +1,78 @@
+.sidebar {
+  position: fixed;
+  width: 246px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 0;
+  background: #ee436e;
+  z-index: 3; /* overlay'den daha yüksek bir z-index */
+}
+.sidebarHeader {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 16px;
+}
+
+.sidebarHeader h1 {
+  font-size: 24px;
+  color: #005382;
+}
+
+.sidebarHeader img {
+  cursor: pointer;
+}
+
+.categorySection {
+  background: #d33a61;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.categorySection h2 {
+  color: #fff;
+  font-size: 24px;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar ul li {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.sidebar ul li.active {
+  background: #005382;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.navItem img {
+  margin-right: 10px;
+}

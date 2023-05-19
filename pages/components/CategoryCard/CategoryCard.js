@@ -1,53 +1,24 @@
+import useFetchGames from "@/pages/hooks/useFetchGames";
+import useFindGame from "@/pages/hooks/useFindGame";
 import React from "react";
+import GameGrid from "../GameGrid/GameGrid";
 import styles from "./CategoryCard.module.css";
 
-const CategoryCard = ({
-  categoryTitle,
-  games,
-  categoryIcon,
-  iconSize,
-  categoryLink,
-}) => {
-  const handleClick = (link) => {
-    window.location.href = link;
-  };
+const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
+  const games = useFetchGames();
+  const game = useFindGame();
 
   return (
     <div className={styles.categoryCard}>
       <div className={styles.titleSection}>
-        <img
-          src={categoryIcon}
-          alt={`${categoryTitle} icon`}
-          style={{
-            width: iconSize.width,
-            height: iconSize.height,
-            color: iconSize.color,
-          }}
-        />
-        <h2 className={styles.categoryTitle}>{categoryTitle}</h2>
+        <img src={categoryIcon} alt={`${categoryTitle} icon`} style={{}} />
+        <h2 className={styles.categoryTitle}>
+          {categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1)}
+        </h2>
       </div>
-      <div className={styles.gridAndButtonContainer}>
-        <div className={styles.gridSection}>
-          <div className={styles.gameGridItems}>
-            {games.map((game) => (
-              <div
-                key={game.id}
-                className={styles.gridItem}
-                onClick={() => handleClick(game.gameLink)}
-              >
-                <img src={game.imageUrl} alt={game.gameTitle} />
-                <div className={styles.titleOverlay}>{game.gameTitle}</div>
-              </div>
-            ))}
-          </div>
-          <div className={styles.buttonContainer}>
-            <div
-              className={styles.viewAllButton}
-              onClick={() => handleClick(categoryLink)}
-            >
-              View All
-            </div>
-          </div>
+      <div className={styles.gridSection}>
+        <div className={styles.gameGridItems}>
+          <GameGrid games={game} itemsToShow={24} />
         </div>
       </div>
     </div>

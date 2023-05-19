@@ -1,0 +1,168 @@
+@media screen and (max-width: 1155px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(6, 98.97px);
+    grid-template-rows: repeat(1, 102px);
+    gap: 10px;
+  }
+  .recentlyPlayed {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .game {
+    width: 98.97px;
+    height: 102px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 770px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(5, 102.64px);
+    grid-template-rows: repeat(2, 102.64px);
+    gap: 10px;
+  }
+  .recentlyPlayed {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .game {
+    width: 98.97px;
+    height: 102px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(4, 102.64px);
+    grid-template-rows: repeat(2, 102.64px);
+    gap: 20px;
+  }
+  .recentlyPlayed {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .game {
+    width: 98.97px;
+    height: 102px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .recentlyPlayed {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(3, 102.64px);
+    grid-template-rows: repeat(2, 102.64px);
+    gap: 10px;
+  }
+
+  .game {
+    width: 98.97px;
+    height: 102px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .recentlyPlayed {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(3, 78px);
+    grid-template-rows: repeat(2, 78px);
+    gap: 10px;
+  }
+
+  .game {
+    width: 78px;
+    height: 78px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}

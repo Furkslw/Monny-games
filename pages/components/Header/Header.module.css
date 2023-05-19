@@ -1,0 +1,143 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  height: 116px;
+  padding: 0 30px;
+}
+
+.header p {
+  margin: 0;
+  text-align: right;
+  font-size: 16px;
+  line-height: 19px;
+  color: #005382;
+}
+.logo {
+  margin-top: 3rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.logo img {
+  max-width: 134px;
+  max-height: 140.09px;
+}
+.logoText {
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 1813px) {
+  .logo {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 500px) {
+  .logo {
+    margin-top: 0;
+  }
+  .logo img {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 81.31px;
+    height: 85px;
+  }
+  .logoText img {
+    width: 89.6px;
+    height: 42.74px;
+  }
+  .logoText {
+    margin-top: 1rem;
+  }
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+}
+.social p {
+  margin-right: 2rem;
+}
+.social p span {
+  color: #ee436e;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.buttons img {
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .buttons img {
+    width: 50px;
+    height: 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 18px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 1813px) {
+  .social p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .logo {
+    margin-top: 0;
+  }
+  .logo img {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 81.31px;
+    height: 85px;
+  }
+
+  .logoText img {
+    width: 89.6px;
+    height: 42.74px;
+  }
+  .logoText {
+    margin-top: 1rem;
+  }
+  .social p {
+    font-size: 14px;
+  }
+  .buttons img {
+    width: 43px;
+    height: 13px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 3rem;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 18px;
+    height: 70px;
+  }
+}

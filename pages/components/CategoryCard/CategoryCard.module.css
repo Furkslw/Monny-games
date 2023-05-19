@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   width: 243px;
   height: 585px;
   background: #023d5e;
@@ -83,6 +84,12 @@
 .gridItem:hover .titleOverlay {
   opacity: 1;
 }
+.titleSection h2 {
+  font-size: 24px;
+  color: #005382;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
 
 .categoryIcon {
   width: 21px;
@@ -98,12 +105,13 @@
     justify-content: center;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(3, 102.57px);
-    grid-template-rows: repeat(5, 102.6px);
+    grid-template-columns: repeat(3, 70.6px);
+    grid-template-rows: repeat(5, 70.6px);
+    gap: 10px;
   }
   .categoryCard img {
-    width: 102.57px;
-    height: 102.6px;
+    width: 70.6px;
+    height: 70.6px;
   }
 }
 
@@ -118,7 +126,7 @@
   border-radius: 10px 10px 0 0;
   text-align: center;
   align-items: center;
-  justify-self: flex-end;
+
   position: absolute;
   line-height: 40px;
   cursor: pointer;
@@ -144,5 +152,19 @@
 @media screen and (max-width: 500px) {
   .viewAllButton {
     display: block;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .viewAllButton {
+    display: block;
+  }
+  .gameGridItems {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 70.6px);
+    grid-template-rows: repeat(5, 70.6px);
+    gap: 10px;
   }
 }

@@ -1,0 +1,166 @@
+@media screen and (max-width: 1155px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(6, 102.64px);
+    grid-template-rows: repeat(7, 102.64px);
+    gap: 20px;
+  }
+  .todayGames {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .game {
+    width: 102.64px;
+    height: 102.64px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 770px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(5, 102.64px);
+    grid-template-rows: repeat(8, 102.64px);
+    gap: 20px;
+  }
+  .todayGames {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .game {
+    width: 102.64px;
+    height: 102.64px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .games {
+    display: grid;
+    grid-template-columns: repeat(4, 102.64px);
+    grid-template-rows: repeat(8, 102.64px);
+    gap: 20px;
+  }
+  .todayGames {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .game {
+    width: 102.64px;
+    height: 102.64px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todayGames {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(3, 102.64px);
+    grid-template-rows: repeat(5, 102.64px);
+    gap: 10px;
+  }
+
+  .game {
+    width: 102.64px;
+    height: 102.64px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 300px) {
+  .todayGames {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(3, 78px);
+    grid-template-rows: repeat(5, 78px);
+    gap: 10px;
+  }
+
+  .game {
+    width: 78px;
+    height: 78px;
+  }
+
+  .game img {
+    width: 100%;
+    height: auto;
+  }
+
+  .game h3 {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}

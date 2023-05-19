@@ -6,29 +6,42 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const router = useRouter();
 
-  const isActive = (href) => router.pathname === href;
+  const isActive = (href) => router.asPath.startsWith(href);
 
-  const NavLink = ({ href, children }) => (
+  const HomeLink = () => (
     <Link
-      href={href}
-      className={`${styles.navLink} ${isActive(href) ? styles.active : ""}`}
+      href="/scenes/home"
+      className={`${styles.navLink} ${
+        isActive("/scenes/home") ? styles.active : ""
+      }`}
     >
-      {children}
+      <img src="/home.png" alt="logo" className={styles.homeicon} />
+      Home
     </Link>
   );
 
+  const NavLink = ({ category, children }) => {
+    const href = `/scenes/category/${category}`;
+
+    return (
+      <Link href={href}>
+        <div
+          className={`${styles.navLink} ${isActive(href) ? styles.active : ""}`}
+        >
+          {children}
+        </div>
+      </Link>
+    );
+  };
   return (
     <div className={styles.navbar}>
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <NavLink href="/scenes/home">
-              <img src="/home.png" alt="logo" className={styles.homeicon} />
-              Home
-            </NavLink>
+            <HomeLink />
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/popular">
+            <NavLink category={"popular"}>
               <img
                 src="/popular.png"
                 alt="logo"
@@ -38,31 +51,31 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/io">
+            <NavLink category={"IO"}>
               <img src="/IO.png" alt="logo" className={styles.IOicon} />
               IO
             </NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/gun">
+            <NavLink category={"gun"}>
               <img src="/gun.png" alt="logo" className={styles.gunicon} />
               Gun
             </NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/girls">
+            <NavLink category={"girls"}>
               <img src="/girls.png" alt="logo" className={styles.girlsicon} />
               Girls
             </NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/racing">
+            <NavLink category={"racing"}>
               <img src="/racing.png" alt="logo" className={styles.racingicon} />
               Racing
             </NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink href="/sports">
+            <NavLink category={"sports"}>
               <img src="/sports.png" alt="logo" className={styles.sportsicon} />
               Sports
             </NavLink>
