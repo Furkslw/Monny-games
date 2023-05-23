@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "./GameGridItem.module.css";
 
@@ -8,10 +8,13 @@ const GameGridItem = ({ gameTitle, slug, id }) => {
   const createImageUrl = (slug) => {
     return `https://assets.humoq.com/cdn-cgi/image/quality=78,fit=cover,f=auto,width=256/images/h140/${slug}.webp`;
   };
-
+  `/game/${slug}?id=${id}`;
   const onClick = (e) => {
     e.preventDefault();
-    router.push(`/scenes/game/${slug}?id=${id}`);
+    router.push({
+      pathname: `/game/[slug]`,
+      query: { slug: slug, id: id },
+    });
   };
 
   console.log(slug);

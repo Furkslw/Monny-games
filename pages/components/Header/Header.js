@@ -46,7 +46,7 @@ const Header = ({ games, categories }) => {
   return (
     <>
       <header className={styles.header}>
-        <Link href="/scenes/home">
+        <Link href="/home">
           <div className={styles.logo}>
             <img src="/logo.png" alt="logo" width={134} height={140.09} />
             <div className={styles.logoText}>

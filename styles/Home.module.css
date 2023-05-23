@@ -1,0 +1,449 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 29px 100px 0 100px;
+}
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.gridContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(9, 134px);
+  grid-template-rows: repeat(11, 134px);
+  width: 100%;
+  gap: 10px;
+  grid-auto-flow: dense;
+  padding: 1rem;
+}
+
+.multiplayerCardSection {
+  grid-column-start: 7;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+.categorySection {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+.categoryGrid {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 9;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+.categoryCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottomGrid {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 10;
+  grid-row-end: 12;
+}
+.bottomGridItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1813px) {
+  .main {
+    padding: 29px 50px 0 50px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(8, 134px);
+    grid-template-rows: repeat(11, 134px);
+  }
+  .multiplayerCardSection {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .categoryGrid {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    align-items: center; /* Grid içindeki öğeleri dikey olarak ortalar */
+    justify-items: center; /* Grid içindeki öğeleri yatay olarak ortalar */
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
+}
+
+@media screen and (max-width: 1615px) {
+  .main {
+    padding: 29px 30px 0 30px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(7, 134px);
+    grid-template-rows: repeat(11, 134px);
+  }
+  .multiplayerCardSection {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .categoryGrid {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
+}
+
+@media screen and (max-width: 1343px) {
+  .main {
+    padding: 29px 20px 0 20px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(6, 134px);
+    grid-template-rows: repeat(16, 134px);
+  }
+  .multiplayerCardSection {
+    display: none;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .categoryGrid {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 15;
+    grid-row-end: 16;
+  }
+}
+
+@media screen and (max-width: 1143px) {
+  .main {
+    padding: 29px 10px 0 10px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(4, 134px);
+    grid-template-rows: repeat(20, 134px);
+  }
+  .multiplayerCardSection {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+  .categorySection {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .categoryGrid {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 15;
+    grid-row-end: 16;
+  }
+}
+
+@media screen and (max-width: 946px) {
+  .main {
+    padding: 29px 10px 0 10px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(4, 134px);
+    grid-template-rows: repeat(20, 134px);
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 25;
+    grid-row-start: 19;
+    grid-row-end: 20;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 29px 10px 0 10px;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(3, 134px);
+    grid-template-rows: repeat(20, 134px);
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 25;
+    grid-row-start: 19;
+    grid-row-end: 20;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .adBot {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .adTop {
+    display: none;
+  }
+}
+/* CategoryCard MediaQueries */
+@media screen and (max-width: 1743px) {
+  .categoryGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .categoryGrid :nth-child(4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1343px) {
+  .categoryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+  }
+  .categoryGrid :nth-child(4) {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1143px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3;
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 19;
+    grid-row-end: 20;
+  }
+}
+
+@media screen and (max-width: 943px) {
+  .categoryGrid {
+    grid-template-columns: 2;
+    grid-template-rows: 5;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .categoryGrid {
+    grid-template-columns: 1;
+    grid-template-rows: 5;
+  }
+}
+@media screen and (max-width: 550px) {
+  .gridContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 102.57px);
+    grid-template-rows: repeat(36, 102.6px);
+    width: 100%;
+    gap: 10px;
+    grid-auto-flow: dense;
+    padding: 0;
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1;
+    grid-template-rows: 5;
+  }
+  .categorySection {
+    justify-self: center;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 36;
+  }
+
+  .categoryGrid {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 33;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    align-items: center; /* Grid içindeki öğeleri dikey olarak ortalar */
+    justify-items: center; /* Grid içindeki öğeleri yatay olarak ortalar */
+  }
+  .bottomGrid {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 34;
+    grid-row-end: 34;
+  }
+
+  .bottomResGridItem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+  }
+}
+
+/* Mobile responsive */
+
+@media screen and (max-width: 500px) {
+  .main {
+    padding: 10px 0;
+  }
+
+  .gridContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 102.57px);
+    grid-template-rows: repeat(44, 102.6px);
+    width: 100%;
+    gap: 10px;
+    grid-auto-flow: dense;
+    padding: 0;
+  }
+
+  .multiplayerCardSection {
+    display: block;
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 10;
+  }
+  .categorySection {
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 15;
+    grid-row-end: 45;
+  }
+
+  .categoryGrid {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 15;
+    grid-row-end: 45;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    align-items: center; /* Grid içindeki öğeleri dikey olarak ortalar */
+    justify-items: center; /* Grid içindeki öğeleri yatay olarak ortalar */
+  }
+
+  .categoryCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    border-radius: 10px;
+  }
+
+  .bottomResGrid {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 10;
+    grid-row-end: 16;
+  }
+
+  .bottomResGridItem {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .gridContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 70.57px);
+    grid-template-rows: repeat(44, 70.6px);
+    width: 100%;
+    gap: 10px;
+
+    padding: 0;
+  }
+  .bottomResGrid {
+    grid-column-start: 0;
+    grid-column-end: 4;
+    grid-row-start: 11;
+    grid-row-end: 17;
+  }
+  .categorySection {
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 17;
+    grid-row-end: 45;
+  }
+  .multiplayerCard {
+    width: 100%;
+    height: 100%;
+  }
+}

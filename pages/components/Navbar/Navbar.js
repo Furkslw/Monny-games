@@ -10,10 +10,8 @@ const Navbar = () => {
 
   const HomeLink = () => (
     <Link
-      href="/scenes/home"
-      className={`${styles.navLink} ${
-        isActive("/scenes/home") ? styles.active : ""
-      }`}
+      href="/home"
+      className={`${styles.navLink} ${isActive("/home") ? styles.active : ""}`}
     >
       <img src="/home.png" alt="logo" className={styles.homeicon} />
       Home
@@ -21,7 +19,7 @@ const Navbar = () => {
   );
 
   const NavLink = ({ category, children }) => {
-    const href = `/scenes/category/${category}`;
+    const href = `/category/${category}`;
 
     return (
       <Link href={href}>

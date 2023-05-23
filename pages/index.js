@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const Index = () => {
   const router = useRouter();
   React.useEffect(() => {
-    router.push("/scenes/home");
+    router.push("/home");
   }, []);
 
   return null;

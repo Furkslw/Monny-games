@@ -6,6 +6,7 @@ export default function useWindowSize() {
   useEffect(() => {
     const checkScreenSizeForGrid = () => {
       setIsSmallScreenForGrid(window.innerWidth <= 500);
+      console.log("checkScreenSizeForGrid");
     };
     checkScreenSizeForGrid();
     window.addEventListener("resize", checkScreenSizeForGrid);

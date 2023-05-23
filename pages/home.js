@@ -1,17 +1,17 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
-import { GameContext } from "../contexts/GameContext";
-import Header from "../components/Header/Header";
+import { GameContext } from "./contexts/GameContext";
+import Header from "./components/Header/Header";
 import styles from "../styles/Home.module.css";
-import MultiplayerCard from "../components/MultiplayerSection/MultiplayerCard";
-import CategoryCard from "../components/CategoryCard/CategoryCard";
-import Ad from "../components/Ad/Ad";
-import GameGrid from "../components/GameGrid/GameGrid";
-import useWindowSize from "../hooks/useWindowSize";
-import useItemCount from "../hooks/useItemCount";
-import useFetchGames from "../hooks/useFetchGames";
-import Spinner from "../components/Spinner/Spinner";
-import useFetchImage from "../hooks/useFetchImage";
+import MultiplayerCard from "./components/MultiplayerSection/MultiplayerCard";
+import CategoryCard from "./components/CategoryCard/CategoryCard";
+import Ad from "./components/Ad/Ad";
+import GameGrid from "./components/GameGrid/GameGrid";
+import useWindowSize from "./hooks/useWindowSize";
+import useItemCount from "./hooks/useItemCount";
+import useFetchGames from "./hooks/useFetchGames";
+import Spinner from "./components/Spinner/Spinner";
+import useFetchImage from "./hooks/useFetchImage";
 
 const Home = () => {
   /* Context'ten gelen oyun ve kategori bilgileri */
