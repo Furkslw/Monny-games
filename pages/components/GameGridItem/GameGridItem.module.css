@@ -6,8 +6,8 @@
 }
 
 .gridItem img {
-  width: 100%;
-  height: auto;
+  width: 134px;
+  height: 134px;
 }
 
 .titleOverlay {
@@ -24,4 +24,17 @@
 
 .gridItem:hover .titleOverlay {
   display: block;
+}
+
+@media screen and (max-width: 550px) {
+  .gridItem img {
+    width: 102px;
+    height: 102px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .gridItem img {
+    width: 78px;
+    height: 78px;
+  }
 }

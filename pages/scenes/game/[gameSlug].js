@@ -9,6 +9,8 @@ import Ad from "../../components/Ad/Ad";
 import Spinner from "../../components/Spinner/Spinner";
 import GameGrid from "@/pages/components/GameGrid/GameGrid";
 import useFetchGames from "@/pages/hooks/useFetchGames";
+import useWindowSize from "@/pages/hooks/useWindowSize";
+import MultiplayerCard from "@/pages/components/MultiplayerSection/MultiplayerCard";
 
 const Game = () => {
   const router = useRouter();
@@ -16,7 +18,18 @@ const Game = () => {
   const { gameSlug, id } = router.query;
   const [loading, setLoading] = useState(false);
   const [game, setGame] = useState(null);
-  const games = useFetchGames();
+  const [games, setGames] = useState([]);
+  const { getGames } = useFetchGames();
+  const isSmallScreenForGrid = useWindowSize();
+
+  useEffect(() => {
+    getGames().then((response) => {
+      const { data } = response;
+      if (data.data) {
+        setGames(data.data);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (!game && id) {
@@ -62,6 +75,14 @@ const Game = () => {
                   </div>
                   <GameGrid games={games} itemsToShow={15} />
                 </div>
+                {isSmallScreenForGrid && (
+                  <div className={styles.multiplayerCardSection}>
+                    <div className={`${styles.multiplayerCard}`}>
+                      <MultiplayerCard />
+                    </div>
+                  </div>
+                )}
+
                 <div className={styles.categorySection}>
                   {categories.map((category) => (
                     <div className={styles.categoryCard} key={category.title}>

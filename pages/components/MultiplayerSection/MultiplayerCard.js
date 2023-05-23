@@ -10,7 +10,7 @@ const MultiplayerCard = () => {
     // Örnek oyunlar, gerçek verilerle değiştirilebilir
     { image: "/multiplayer1.png", title: "Game 1" },
     { image: "/multiplayer2.png", title: "Game 2" },
-    { image: "/multiplayer1.png", title: "Game 3" },
+    { image: "/multiplayer2.png", title: "Game 3" },
     { image: "/multiplayer2.png", title: "Game 4" },
     { image: "/multiplayer1.png", title: "Game 5" },
     { image: "/multiplayer2.png", title: "Game 6" },
@@ -49,12 +49,8 @@ const MultiplayerCard = () => {
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>Multiplayer</h2>
         <div className={styles.button}>
-          <button onClick={handlePrevious} className={styles.arrow}>
-            &lt;
-          </button>
-          <button onClick={handleNext} className={styles.arrow}>
-            &gt;
-          </button>
+          <img src="/backarrow.png" alt="barrow" onClick={handlePrevious} />
+          <img src="/arrow.png" alt="arrow" onClick={handleNext} />
         </div>
       </div>
       <div className={styles.gameCards}>

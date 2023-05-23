@@ -3,58 +3,33 @@ import styles from "./SearchModal.module.css";
 
 import RecentlyPlayed from "./RecentlyPlayed/RecentlyPlayed";
 import TodayGames from "./TodayGames/TodayGames";
+import useFetchGames from "@/pages/hooks/useFetchGames";
 
-const SearchModal = ({
-  isSearchModalOpen,
-  toggleSearchModal,
-  games,
-  categories,
-}) => {
+const SearchModal = ({ isSearchModalOpen, toggleSearchModal, categories }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [placeholder, setPlaceholder] = useState("Enter a word..");
   const [searchResults, setSearchResults] = useState([]);
+  const [games, setGames] = useState([]);
+  const { getGames } = useFetchGames();
 
   useEffect(() => {
-    const getSearchResults = () => {
-      const lowerCaseSearchTerm = searchTerm.toLowerCase().replace(/\s/g, "");
+    getGames()
+      .then((response) => {
+        const { data } = response;
+        if (data.data) {
+          setGames(data.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-      // Filter the games and categories based on the search term
-      const filteredGames = games.filter((game) =>
-        game.gameTitle
-          .toLowerCase()
-          .replace(/\s/g, "")
-          .includes(lowerCaseSearchTerm)
-      );
-      const filteredCategories = categories.filter((category) =>
-        category.title
-          .toLowerCase()
-          .replace(/\s/g, "")
-          .includes(lowerCaseSearchTerm)
-      );
+  // Filter the games and categories based on the search term
 
-      // Combine the results into a single array
-      const results = [...filteredGames, ...filteredCategories];
-      setSearchResults(results);
-    };
-
-    if (searchTerm) {
-      getSearchResults();
-    } else {
-      // If there is no search term, clear the results
-      setSearchResults([]);
-    }
-  }, [searchTerm]);
-
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-    if (event.target.value === "") {
-      setPlaceholder("Enter a word..");
-    } else {
-      setPlaceholder("");
-    }
+  const [inputValue, setInputValue] = useState("");
+  const handleSearchClick = () => {
+    console.log("Arama gerçekleştirildi");
   };
-
-  const recentlyPlayedGames = games.slice(0, 6);
 
   return (
     <div className={styles.modal}>
@@ -63,12 +38,14 @@ const SearchModal = ({
         <div className={styles.searchBar}>
           <input
             type="text"
-            value={searchTerm}
-            onChange={handleInputChange}
             className={styles.searchInput}
-          />
-          <span className={styles.placeholder}>{placeholder}</span>
-          <img src="/search.png" alt="Search" className={styles.searchIcon} />
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          ></input>
+          {!inputValue && (
+            <div className={styles.placeholder}>Enter a word..</div>
+          )}
+          <img src="/search.png" alt="search" onClick={handleSearchClick} />
         </div>
 
         {searchTerm && (
@@ -76,7 +53,6 @@ const SearchModal = ({
             <h2 className={styles.resultsTitle}>Search Results</h2>
             <div className={styles.results}>
               {searchResults.slice(0, 6).map((result, index) => {
-                // This is a game
                 return (
                   <div className={styles.resultItem} key={index}>
                     <img src={result.imageUrl} alt={result.gameTitle} />
@@ -88,7 +64,7 @@ const SearchModal = ({
         )}
         {searchTerm === "" && (
           <>
-            <RecentlyPlayed recentlyPlayedGames={recentlyPlayedGames} />
+            <RecentlyPlayed games={games} />
             <TodayGames games={games} />
           </>
         )}

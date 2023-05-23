@@ -35,6 +35,7 @@ const Home = () => {
   const isSmallScreenForGrid = useWindowSize();
 
   const bottomBreakPoints = {
+    500: 15,
     1154: 4,
     1340: 6,
     1615: 7,
@@ -45,9 +46,9 @@ const Home = () => {
   const bottomItemCount = useItemCount(bottomBreakPoints, 9);
   const breakPoints = {
     500: 15,
-    945: 5,
-    1150: 5,
-    1330: 15,
+    945: 20,
+    1150: 20,
+    1350: 30,
     1615: 20,
     1800: 25,
     2200: 30,

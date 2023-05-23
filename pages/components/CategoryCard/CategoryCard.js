@@ -7,11 +7,16 @@ import styles from "./CategoryCard.module.css";
 const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
   const games = useFetchGames();
   const game = useFindGame();
+  console.log(iconSize);
 
   return (
     <div className={styles.categoryCard}>
       <div className={styles.titleSection}>
-        <img src={categoryIcon} alt={`${categoryTitle} icon`} style={{}} />
+        <img
+          src={categoryIcon}
+          alt={`${categoryTitle} icon`}
+          style={{ ...iconSize }}
+        />
         <h2 className={styles.categoryTitle}>
           {categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1)}
         </h2>

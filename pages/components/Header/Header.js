@@ -5,6 +5,8 @@ import SearchBar from "../SearchBar/SearchBar";
 import Navbar from "../Navbar/Navbar";
 import SideBar from "../SideBar/SideBar";
 import SearchModal from "../SearchModal/SearchModal";
+import useWindowSize from "@/pages/hooks/useWindowSize";
+import Link from "next/link";
 
 const Header = ({ games, categories }) => {
   // Sidebarla ilgili state
@@ -44,17 +46,19 @@ const Header = ({ games, categories }) => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src="/logo.png" alt="logo" width={134} height={140.09} />
-          <div className={styles.logoText}>
-            <img
-              src="/ponny-games-text.png"
-              alt="logoText"
-              width={147.67}
-              height={70.43}
-            />
+        <Link href="/scenes/home">
+          <div className={styles.logo}>
+            <img src="/logo.png" alt="logo" width={134} height={140.09} />
+            <div className={styles.logoText}>
+              <img
+                src="/ponny-games-text.png"
+                alt="logoText"
+                width={147.67}
+                height={70.43}
+              />
+            </div>
           </div>
-        </div>
+        </Link>
         <div className={styles.logoText}></div>
         <div className={styles.social}>
           {!isSmallScreen && (

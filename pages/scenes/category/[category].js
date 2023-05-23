@@ -18,9 +18,37 @@ import useFetchCategories from "@/pages/hooks/useFetchCategories";
 const Category = () => {
   const router = useRouter();
 
-  const { category } = router.query;
-  const categories = useFetchCategories();
+  const { categoryTitle, id } = router.query;
+  const [categories, setCategories] = useState([]);
+  const [category, setCategory] = useState(null);
+  const { getCategories } = useFetchCategories();
   const games = useFetchGames();
+
+  useEffect(() => {
+    getCategories().then((response) => {
+      const { data } = response;
+      if (data.data) {
+        setCategories(data.data);
+      }
+    });
+  }, [categories, id]);
+
+  useEffect(() => {
+    if (!category && id) {
+      axios
+        .get(
+          `${
+            process.env.HUMOQ_API_URL
+          }/api/v1/games/category/${id}/?domain_id=${16}`
+        )
+        .then((response) => {
+          const { data } = response;
+          if (data.data) {
+            setCategory(data.data);
+          }
+        });
+    }
+  }, [category, id]);
 
   const isSmallScreenForGrid = useWindowSize();
   const breakPoints = {

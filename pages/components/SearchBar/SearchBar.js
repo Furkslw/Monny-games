@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
@@ -20,7 +21,9 @@ const SearchBar = () => {
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       {!inputValue && <div className={styles.placeholder}>Search</div>}
-      <img src="/search.png" alt="search" onClick={handleSearchClick} />
+      <Link href={"/scenes/searchscreen"}>
+        <img src="/search.png" alt="search" onClick={handleSearchClick} />
+      </Link>
     </div>
   );
 };

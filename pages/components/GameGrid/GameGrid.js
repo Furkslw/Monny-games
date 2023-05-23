@@ -16,12 +16,7 @@ const GameGrid = ({ itemsToShow, games }) => {
     <>
       {gamesToRender &&
         gamesToRender.map((game) => (
-          <GameGridItem
-            key={game.id}
-            slug={game.slug}
-            gameTitle={game.title}
-            gameLink={`/scenes/game/${game.slug}?id=${game.id}`}
-          />
+          <GameGridItem id={game.id} slug={game.slug} gameTitle={game.title} />
         ))}
     </>
   );

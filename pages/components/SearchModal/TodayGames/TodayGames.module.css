@@ -72,10 +72,15 @@
   }
   .todayGames {
     width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    flex-direction: column;
   }
 
   .title {
     font-size: 24px;
+
     color: #fff;
     margin-bottom: 20px;
   }
