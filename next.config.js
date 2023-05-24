@@ -18,6 +18,7 @@ module.exports = {
           options: {
             importLoaders: 1,
             modules: {
+              auto: /\.module\.\w+$/i, // Bu satır CSS modülleri için eklendi
               localIdentName: "[name]__[local]__[hash:base64:5]",
             },
           },

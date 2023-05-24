@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import styles from "./MultiplayerCard.module.css";
+import React, { useState } from "react";
+import styles from "./ResponsiveMultiplayerCard.module.css";
 import GameCard from "./GameCard";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const MultiplayerCard = () => {
+const ResponsiveMultiplayerCard = () => {
   const [page, setPage] = useState(0);
-  const cardsToShow = 3;
+  const cardsToShow = 2;
 
   const games = [
     // Örnek oyunlar, gerçek verilerle değiştirilebilir
@@ -34,14 +35,21 @@ const MultiplayerCard = () => {
         </div>
       </div>
       <div className={styles.gameCards}>
-        {games
-          .slice(page * cardsToShow, page * cardsToShow + cardsToShow)
-          .map((game, index) => (
-            <GameCard key={index} image={game.image} title={game.title} />
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={cardsToShow}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {games.map((game, index) => (
+            <SwiperSlide key={index}>
+              <GameCard image={game.image} title={game.title} />
+            </SwiperSlide>
           ))}
+        </Swiper>
       </div>
     </div>
   );
 };
 
-export default MultiplayerCard;
+export default ResponsiveMultiplayerCard;

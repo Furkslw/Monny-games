@@ -73,8 +73,12 @@
 .bottomGrid img {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .bottomResGrid {
+  display: none;
+}
+.resMultiCard {
   display: none;
 }
 
@@ -360,7 +364,12 @@
   .main {
     padding: 10px 0;
   }
-
+  .normalMultiCard {
+    display: none;
+  }
+  .resMultiCard {
+    display: block;
+  }
   .gridContainer {
     display: grid;
     justify-content: center;

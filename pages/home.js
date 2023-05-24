@@ -12,6 +12,7 @@ import useItemCount from "./hooks/useItemCount";
 import useFetchGames from "./hooks/useFetchGames";
 import Spinner from "../components/Spinner/Spinner";
 import useFetchImage from "./hooks/useFetchImage";
+import ResponsiveMultiplayerCard from "@/components/MultiplayerSection/ResponsiveMultiplayerCard";
 
 const Home = () => {
   /* Context'ten gelen oyun ve kategori bilgileri */
@@ -74,9 +75,15 @@ const Home = () => {
           <GameGrid games={games} itemsToShow={itemsToShow} />
           <div className={styles.multiplayerCardSection}>
             <div className={`${styles.multiplayerCard}`}>
-              <MultiplayerCard />
+              <div className={styles.normalMultiCard}>
+                <MultiplayerCard />
+              </div>
+              <div className={styles.resMultiCard}>
+                <ResponsiveMultiplayerCard />
+              </div>
             </div>
           </div>
+
           <div className={styles.categorySection}>
             <div className={styles.categoryGrid}>
               {categories.map((category) => (
