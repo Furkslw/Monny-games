@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Social.module.css";
-import SearchBar from "../../SearchBar/SearchBar";
-import SideBar from "../../SideBar/SideBar";
+import SearchBar from "../../../../components/SearchBar/SearchBar";
+import SideBar from "../../../../components/SideBar/SideBar";
 
 const Social = ({
   isSmallScreen,

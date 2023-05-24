@@ -16,6 +16,9 @@
 }
 
 .categoryCard img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 96.8px;
   height: 96.8px;
 }
@@ -40,7 +43,7 @@
   align-items: center;
   display: grid;
   grid-template-columns: repeat(2, 98px);
-  grid-template-rows: repeat(5, 98px);
+  grid-template-rows: repeat(15, 98px);
   margin-top: 2.5rem;
   gap: 15.37px;
   width: 100%;
@@ -100,18 +103,25 @@
   .categoryCard {
     width: 100vw;
     height: 100%;
+    max-height: 608px;
   }
   .gameGridItems {
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 70.6px);
-    grid-template-rows: repeat(5, 70.6px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 102.6px);
+    grid-template-rows: repeat(15, 102.6px);
+    height: 100%;
+    max-height: 608px;
   }
   .categoryCard img {
-    width: 70.6px;
-    height: 70.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 608px;
+    width: 102.6px;
+    height: 102.6px;
   }
 }
 
@@ -163,8 +173,7 @@
     justify-content: center;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(3, 70.6px);
-    grid-template-rows: repeat(5, 70.6px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 102.6px);
+    grid-template-rows: repeat(5, 102.6px);
   }
 }

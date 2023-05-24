@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import GameGridItem from "../GameGridItem/GameGridItem";
 
-const GameGrid = ({ itemsToShow, games }) => {
+const GameGrid = ({ itemsToShow, games, excludedGameId }) => {
   const [gamesToRender, setGamesToRender] = useState(null);
   useEffect(() => {
     console.log("Games length: ", games?.length, "Games type", typeof games);
     if (games.length && games.length !== 0) {
-      const temp = games.slice(0, itemsToShow);
+      const temp = games
+        .filter((game) => game.id !== excludedGameId)
+        .slice(0, itemsToShow);
 
       setGamesToRender(temp);
     }
-  }, [games]);
+  }, [games, excludedGameId]);
 
   return (
     <>

@@ -70,6 +70,13 @@
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+.bottomGrid img {
+  display: flex;
+  justify-content: center;
+}
+.bottomResGrid {
+  display: none;
+}
 
 @media screen and (max-width: 1813px) {
   .main {
@@ -392,6 +399,9 @@
     align-items: center; /* Grid içindeki öğeleri dikey olarak ortalar */
     justify-items: center; /* Grid içindeki öğeleri yatay olarak ortalar */
   }
+  .bottomGrid {
+    display: none;
+  }
 
   .categoryCard {
     width: 100%;
@@ -404,6 +414,7 @@
   }
 
   .bottomResGrid {
+    display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 10;
@@ -413,9 +424,15 @@
   .bottomResGridItem {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 102px);
+    grid-template-rows: repeat(5, 102px);
     gap: 8px;
+  }
+  .bottomResGridItem img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (max-width: 300px) {

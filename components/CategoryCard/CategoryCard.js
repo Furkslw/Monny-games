@@ -1,11 +1,20 @@
 import useFetchGames from "@/pages/hooks/useFetchGames";
 import useFindGame from "@/pages/hooks/useFindGame";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GameGrid from "../GameGrid/GameGrid";
 import styles from "./CategoryCard.module.css";
 
 const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
-  const games = useFetchGames();
+  const [games, setGames] = useState([]);
+  const { getGames } = useFetchGames();
+  useEffect(() => {
+    getGames().then((response) => {
+      const { data } = response;
+      if (data.data) {
+        setGames(data.data);
+      }
+    });
+  }, []);
   const game = useFindGame();
   console.log(iconSize);
 
@@ -23,7 +32,7 @@ const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
       </div>
       <div className={styles.gridSection}>
         <div className={styles.gameGridItems}>
-          <GameGrid games={game} itemsToShow={24} />
+          <GameGrid games={games} itemsToShow={30} />
         </div>
       </div>
     </div>

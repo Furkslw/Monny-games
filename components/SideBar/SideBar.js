@@ -31,27 +31,27 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
         <ul>
           <li className={styles.navItem}>
             <img src="/home.png" alt="logo" className={styles.homeicon} />
-            <NavLink href="/scenes/home">Home</NavLink>
+            <NavLink href="/home">Home</NavLink>
           </li>
           <li className={styles.navItem}>
             <img src="/popular.png" alt="logo" className={styles.popularicon} />
-            <NavLink href="/scenes/category/popular">Popular</NavLink>
+            <NavLink href="category/popular">Popular</NavLink>
           </li>
           <li className={styles.navItem}>
             <img src="/gun.png" alt="logo" className={styles.gunicon} />
-            <NavLink href="/scenes/category/gun">Gun</NavLink>
+            <NavLink href="category/gun">Gun</NavLink>
           </li>
           <li className={styles.navItem}>
             <img src="/girls.png" alt="logo" className={styles.girlsicon} />
-            <NavLink href="/scenes/category/girls">Girls</NavLink>
+            <NavLink href="category/girls">Girls</NavLink>
           </li>
           <li className={styles.navItem}>
             <img src="/racing.png" alt="logo" className={styles.racingicon} />
-            <NavLink href="/scenes/category/racing">Racing</NavLink>
+            <NavLink href="category/racing">Racing</NavLink>
           </li>
           <li className={styles.navItem}>
             <img src="/sports.png" alt="logo" className={styles.sportsicon} />
-            <NavLink href="/scenes/category/sports">Sports</NavLink>
+            <NavLink href="category/sports">Sports</NavLink>
           </li>
         </ul>
       </div>

@@ -85,6 +85,9 @@
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
 }
+.multiplayerCardSection {
+  display: none;
+}
 
 @media screen and (max-width: 1340px) {
   .mainContent {
@@ -258,6 +261,9 @@
 @media screen and (max-width: 500px) {
   .main {
     padding: 0;
+  }
+  .multiplayerCardSection {
+    display: block;
   }
   .mainContent {
     padding: 0;

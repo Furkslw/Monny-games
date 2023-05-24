@@ -31,6 +31,10 @@
 .logoText {
   margin-top: 1.6rem;
 }
+.sideBar,
+.buttons {
+  display: none;
+}
 
 @media screen and (max-width: 1813px) {
   .logo {
@@ -39,6 +43,18 @@
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 1154px) {
+  .socialBigScreen,
+  .social {
+    display: none;
+  }
+  .socialBigScreen p {
+    display: none;
+  }
+  .sideBar {
+    display: block;
   }
 }
 @media screen and (max-width: 500px) {
@@ -59,10 +75,13 @@
     margin-top: 1rem;
   }
 }
-.social {
+.social,
+.socialBigScreen {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .social p {
   margin-right: 2rem;
 }

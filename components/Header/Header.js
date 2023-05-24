@@ -5,27 +5,17 @@ import SearchBar from "../SearchBar/SearchBar";
 import Navbar from "../Navbar/Navbar";
 import SideBar from "../SideBar/SideBar";
 import SearchModal from "../SearchModal/SearchModal";
-import useWindowSize from "@/pages/hooks/useWindowSize";
+
 import Link from "next/link";
 
 const Header = ({ games, categories }) => {
   // Sidebarla ilgili state
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 1154);
-    };
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
   // SearchModal State
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
@@ -61,37 +51,29 @@ const Header = ({ games, categories }) => {
         </Link>
         <div className={styles.logoText}></div>
         <div className={styles.social}>
-          {!isSmallScreen && (
-            <>
-              <p>
-                Play games at <span>ponyygame.com</span>
-                <br />
-                Every day you can find the newest and best games on this
-                website!
-              </p>
-              <SearchBar />
-            </>
-          )}
-          {isSmallScreen && (
-            <>
-              <div className={styles.buttons}>
-                <img
-                  src="/search.png"
-                  alt="Search"
-                  onClick={toggleSearchModal}
-                />
-                <img src="/menu.png" alt="menu" onClick={toggleSidebar} />
-              </div>
-              {isSidebarOpen && (
-                <SideBar
-                  isOpen={isSidebarOpen}
-                  toggleSidebar={toggleSidebar}
-                  games={games}
-                  categories={categories}
-                />
-              )}
-            </>
-          )}
+          <div className={styles.socialBigScreen}>
+            <p>
+              Play games at <span>ponyygame.com</span>
+              <br />
+              Every day you can find the newest and best games on this website!
+            </p>
+            <SearchBar />
+          </div>
+
+          <div className={styles.sideBar}>
+            <div className={styles.buttons}>
+              <img src="/search.png" alt="Search" onClick={toggleSearchModal} />
+              <img src="/menu.png" alt="menu" onClick={toggleSidebar} />
+            </div>
+            {isSidebarOpen && (
+              <SideBar
+                isOpen={isSidebarOpen}
+                toggleSidebar={toggleSidebar}
+                games={games}
+                categories={categories}
+              />
+            )}
+          </div>
         </div>
       </header>
       <Navbar />

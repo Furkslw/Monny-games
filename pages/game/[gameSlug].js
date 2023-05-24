@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { GameContext } from "@/pages/contexts/GameContext";
+import { GameContext } from "@/contexts/GameContext";
 import styles from "./game.module.css";
-import Header from "../components/Header/Header";
-import CategoryCard from "../components/CategoryCard/CategoryCard";
-import Ad from "../components/Ad/Ad";
-import Spinner from "../components/Spinner/Spinner";
-import GameGrid from "@/pages/components/GameGrid/GameGrid";
+import Header from "../../components/Header/Header";
+import CategoryCard from "../../components/CategoryCard/CategoryCard";
+import Ad from "../../components/Ad/Ad";
+import Spinner from "../../components/Spinner/Spinner";
+import GameGrid from "@/components/GameGrid/GameGrid";
 import useFetchGames from "@/pages/hooks/useFetchGames";
-import useWindowSize from "@/pages/hooks/useWindowSize";
-import MultiplayerCard from "@/pages/components/MultiplayerSection/MultiplayerCard";
+import MultiplayerCard from "@/components/MultiplayerSection/MultiplayerCard";
 
 const Game = () => {
   const router = useRouter();
@@ -20,7 +19,6 @@ const Game = () => {
   const [game, setGame] = useState(null);
   const [games, setGames] = useState([]);
   const { getGames } = useFetchGames();
-  const isSmallScreenForGrid = useWindowSize();
 
   useEffect(() => {
     getGames().then((response) => {
@@ -73,15 +71,18 @@ const Game = () => {
                       height="100%"
                     ></iframe>
                   </div>
-                  <GameGrid games={games} itemsToShow={15} />
+                  <GameGrid
+                    games={games}
+                    itemsToShow={15}
+                    excludedGameId={game.id}
+                  />
                 </div>
-                {isSmallScreenForGrid && (
-                  <div className={styles.multiplayerCardSection}>
-                    <div className={`${styles.multiplayerCard}`}>
-                      <MultiplayerCard />
-                    </div>
+
+                <div className={styles.multiplayerCardSection}>
+                  <div className={`${styles.multiplayerCard}`}>
+                    <MultiplayerCard />
                   </div>
-                )}
+                </div>
 
                 <div className={styles.categorySection}>
                   {categories.map((category) => (
@@ -95,7 +96,11 @@ const Game = () => {
                   ))}
                 </div>
                 <div className={styles.gridLarge}>
-                  <GameGrid games={games} itemsToShow={24} />
+                  <GameGrid
+                    games={games}
+                    itemsToShow={24}
+                    excludedGameId={game.id}
+                  />
                 </div>
               </div>
               <div className={styles.adBot}>

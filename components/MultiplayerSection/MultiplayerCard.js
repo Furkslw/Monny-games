@@ -3,6 +3,7 @@ import styles from "./MultiplayerCard.module.css";
 import GameCard from "./GameCard";
 
 const MultiplayerCard = () => {
+  const isMobile = window.innerWidth <= 500;
   const [page, setPage] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
 
@@ -25,24 +26,12 @@ const MultiplayerCard = () => {
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width <= 500) {
-        setCardsToShow(2);
-      } else {
-        setCardsToShow(3);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Initial check
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    if (isMobile) {
+      setCardsToShow(2);
+    } else {
+      setCardsToShow(3);
+    }
+  });
 
   return (
     <div className={styles.card}>

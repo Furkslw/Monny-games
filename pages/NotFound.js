@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Ad from "./components/Ad/Ad";
-import Header from "./components/Header/Header";
-import { GameContext } from "./contexts/GameContext";
+import Ad from "../components/Ad/Ad";
+import Header from "../components/Header/Header";
+import { GameContext } from "../contexts/GameContext";
 import styles from "../styles/NotFound.module.css";
 import useFetchGames from "./hooks/useFetchGames";
-import GameGrid from "./components/GameGrid/GameGrid";
+import GameGrid from "../components/GameGrid/GameGrid";
 
 const NotFound = () => {
   const router = useRouter();
