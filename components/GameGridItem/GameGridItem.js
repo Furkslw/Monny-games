@@ -17,7 +17,6 @@ const GameGridItem = ({ gameTitle, slug, id }) => {
     });
   };
 
-  console.log(slug);
   return (
     <div className={`${styles.gridItem}`} onClick={onClick}>
       <img src={createImageUrl(slug)} alt={gameTitle} />

@@ -30,8 +30,6 @@
   grid-row-end: 5;
 }
 .swiperSection {
-  width: 250px;
-  height: 710px;
 }
 .categorySection {
   grid-column-start: 1;
