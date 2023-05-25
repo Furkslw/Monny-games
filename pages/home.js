@@ -29,6 +29,7 @@ const Home = () => {
       if (data.data) {
         setGames(data.data);
         setLoading(false);
+        console.log("Data:", data.data);
       }
     });
   }, []);
@@ -53,6 +54,7 @@ const Home = () => {
     2200: 30,
   };
 
+  console.log("games: ", games);
   const itemsToShow = useItemCount(breakPoints, 30);
   if (loading) {
     return (
