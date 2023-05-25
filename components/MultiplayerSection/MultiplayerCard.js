@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MultiplayerCard.module.css";
 import GameCard from "./GameCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const MultiplayerCard = () => {
   const [page, setPage] = useState(0);
@@ -34,11 +36,18 @@ const MultiplayerCard = () => {
         </div>
       </div>
       <div className={styles.gameCards}>
-        {games
-          .slice(page * cardsToShow, page * cardsToShow + cardsToShow)
-          .map((game, index) => (
-            <GameCard key={index} image={game.image} title={game.title} />
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={cardsToShow}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {games.map((game, index) => (
+            <SwiperSlide key={index}>
+              <GameCard image={game.image} title={game.title} />
+            </SwiperSlide>
           ))}
+        </Swiper>
       </div>
     </div>
   );

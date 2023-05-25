@@ -75,12 +75,7 @@ const Home = () => {
           <GameGrid games={games} itemsToShow={itemsToShow} />
           <div className={styles.multiplayerCardSection}>
             <div className={`${styles.multiplayerCard}`}>
-              <div className={styles.normalMultiCard}>
-                <MultiplayerCard />
-              </div>
-              <div className={styles.resMultiCard}>
-                <ResponsiveMultiplayerCard />
-              </div>
+              <MultiplayerCard />
             </div>
           </div>
 
