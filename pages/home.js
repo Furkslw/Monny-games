@@ -73,11 +73,11 @@ const Home = () => {
 
         <div className={styles.gridContainer}>
           <GameGrid games={games} itemsToShow={itemsToShow} />
-          <div className={styles.multiplayerCardSection}>
+          {/* <div className={styles.multiplayerCardSection}>
             <div className={`${styles.multiplayerCard}`}>
               <MultiplayerCard />
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.categorySection}>
             <div className={styles.categoryGrid}>

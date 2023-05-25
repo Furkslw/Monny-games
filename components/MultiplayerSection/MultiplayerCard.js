@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./MultiplayerCard.module.css";
 import GameCard from "./GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// import "swiper/css";
 
 const MultiplayerCard = () => {
   const [page, setPage] = useState(0);

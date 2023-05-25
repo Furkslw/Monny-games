@@ -98,6 +98,9 @@
   width: 21px;
   height: 20px;
 }
+.viewAllButton {
+  display: none;
+}
 
 @media screen and (max-width: 500px) {
   .categoryCard {
@@ -124,27 +127,41 @@
     width: 102.6px;
     height: 102.6px;
   }
+  .viewAllButton {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 214px;
+    height: 44px;
+    background-color: #ee436e;
+    border-radius: 10px 10px 0 0;
+    border: 3px solid white;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .viewAllButton p {
+    margin: 0;
+  }
+  .viewAllButton img {
+    width: 8px;
+    height: 14px;
+  }
+  .buttonTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* Button Queries*/
-.viewAllButton {
-  display: none;
-  background-color: #ee436e;
-  color: white;
-  width: 219px;
-  height: 44px;
-  border: 2px solid white;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-  align-items: center;
 
-  position: absolute;
-  line-height: 40px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 18px;
-  bottom: -1px;
-}
 .gridAndButtonContainer {
   display: flex;
   flex-direction: column;
@@ -160,16 +177,7 @@
   z-index: 9;
 }
 
-@media screen and (max-width: 500px) {
-  .viewAllButton {
-    display: block;
-  }
-}
-
 @media screen and (max-width: 380px) {
-  .viewAllButton {
-    display: block;
-  }
   .gameGridItems {
     justify-content: center;
     align-items: center;
