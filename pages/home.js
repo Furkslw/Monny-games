@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { GameContext } from "../contexts/GameContext";
 import Header from "../components/Header/Header";
 import styles from "../styles/Home.module.css";
-import MultiplayerCard from "../components/MultiplayerSection/MultiplayerCard";
+import MultiplayerSwiper from "../components/MultiplayerSection/MultiplayerSwiper";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
 import Ad from "../components/Ad/Ad";
 import GameGrid from "../components/GameGrid/GameGrid";
@@ -11,8 +11,6 @@ import GameGrid from "../components/GameGrid/GameGrid";
 import useItemCount from "./hooks/useItemCount";
 import useFetchGames from "./hooks/useFetchGames";
 import Spinner from "../components/Spinner/Spinner";
-import useFetchImage from "./hooks/useFetchImage";
-import ResponsiveMultiplayerCard from "@/components/MultiplayerSection/ResponsiveMultiplayerCard";
 
 const Home = () => {
   /* Context'ten gelen oyun ve kategori bilgileri */
@@ -73,11 +71,11 @@ const Home = () => {
 
         <div className={styles.gridContainer}>
           <GameGrid games={games} itemsToShow={itemsToShow} />
-          {/* <div className={styles.multiplayerCardSection}>
-            <div className={`${styles.multiplayerCard}`}>
-              <MultiplayerCard />
+          <div className={styles.multiplayerCardSection}>
+            <div className={styles.swiperSection}>
+              <MultiplayerSwiper />
             </div>
-          </div> */}
+          </div>
 
           <div className={styles.categorySection}>
             <div className={styles.categoryGrid}>

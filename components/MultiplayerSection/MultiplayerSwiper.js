@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import styles from "./MultiplayerCard.module.css";
-import GameCard from "./GameCard";
+import styles from "./MultiplayerSwiper.module.css";
+import CardsColumn from "./CardsColumn";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
 
-const MultiplayerCard = () => {
+import "swiper/css";
+
+const MultiplayerSwiper = () => {
   const [page, setPage] = useState(0);
-  const cardsToShow = 3;
-
+  const [cardsCount, setCardsCount] = useState(3);
+  const [columns, setColumns] = useState([]);
   const games = [
     // Örnek oyunlar, gerçek verilerle değiştirilebilir
     { image: "/multiplayer1.png", title: "Game 1" },
@@ -18,33 +19,38 @@ const MultiplayerCard = () => {
     { image: "/multiplayer2.png", title: "Game 6" },
   ];
 
-  const handlePrevious = () => {
-    setPage(Math.max(0, page - 1));
+  const prepareGameData = (column_size) => {
+    const preparedGameData = [
+      ...Array(Math.ceil(games.length / column_size)),
+    ].map((_, i) =>
+      games.slice(column_size * i, column_size + column_size * i)
+    );
+
+    setColumns(preparedGameData);
   };
 
-  const handleNext = () => {
-    setPage(Math.min(Math.ceil(games.length / cardsToShow) - 1, page + 1));
-  };
+  useEffect(() => {
+    prepareGameData(cardsCount);
+  }, [cardsCount]);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.swiperContainer}>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>Multiplayer</h2>
         <div className={styles.button}>
-          <img src="/backarrow.png" alt="barrow" onClick={handlePrevious} />
-          <img src="/arrow.png" alt="arrow" onClick={handleNext} />
+          <img src="/backarrow.png" alt="barrow" onClick={() => {}} />
+          <img src="/arrow.png" alt="arrow" onClick={() => {}} />
         </div>
       </div>
       <div className={styles.gameCards}>
         <Swiper
-          spaceBetween={30}
-          slidesPerView={cardsToShow}
+          slidesPerView={1}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {games.map((game, index) => (
+          {columns.map((arr, index) => (
             <SwiperSlide key={index}>
-              <GameCard image={game.image} title={game.title} />
+              <CardsColumn arr={arr} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -53,4 +59,4 @@ const MultiplayerCard = () => {
   );
 };
 
-export default MultiplayerCard;
+export default MultiplayerSwiper;
