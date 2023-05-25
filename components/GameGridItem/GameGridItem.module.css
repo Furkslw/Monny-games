@@ -28,8 +28,8 @@
 
 @media screen and (max-width: 550px) {
   .gridItem img {
-    width: 102px;
-    height: 102px;
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (max-width: 300px) {
