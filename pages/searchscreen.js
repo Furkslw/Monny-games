@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Ad from "../components/Ad/Ad";
-import Header from "./components/Header/Header";
+import Header from "../components/Header/Header";
 import { GameContext } from "../contexts/GameContext";
 import styles from "../styles/searchScreen.module.css";
 import Link from "next/link";
