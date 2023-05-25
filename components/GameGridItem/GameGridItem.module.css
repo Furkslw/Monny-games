@@ -1,0 +1,40 @@
+.gridItem {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gridItem img {
+  width: 134px;
+  height: 134px;
+}
+
+.titleOverlay {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 26px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  line-height: 26px;
+}
+
+.gridItem:hover .titleOverlay {
+  display: block;
+}
+
+@media screen and (max-width: 550px) {
+  .gridItem img {
+    width: 102px;
+    height: 102px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .gridItem img {
+    width: 78px;
+    height: 78px;
+  }
+}

@@ -1,0 +1,173 @@
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.searchBar {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background: transparent;
+  width: 317px;
+  height: 57px;
+  color: #005382;
+  font-family: "Fredoka One", sans-serif;
+}
+.placeholder {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  color: #005382;
+  font-size: 24px;
+}
+
+.modal {
+  position: fixed;
+  top: 50;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #005382;
+  z-index: 2;
+  overflow: auto;
+  /* Header'ın yüksekliğine bağlı olarak ayarlanmalı */
+}
+
+.modalContent {
+  width: 90%;
+  max-width: 600px;
+  color: #fff;
+}
+
+.title {
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  margin-right: 20px;
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.results {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 102.64px);
+  grid-template-rows: repeat(2, 102.64px);
+  gap: 10px; /* Aradaki boşluğu ayarlamak için */
+}
+
+.resultsTitle {
+  width: 100%;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.resultItem {
+  width: 96.64px;
+  height: 96.64px;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  color: #005382;
+  font-size: 16px;
+}
+.placeholder {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  color: #005382;
+  font-size: 22px;
+}
+.inputText {
+  position: absolute;
+  left: 10px;
+  bottom: 50%;
+  transform: translateY(50%);
+  color: #005382;
+  font-size: 16px;
+}
+.placeholderText {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #005382;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1155px) {
+  .modal {
+    position: fixed;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #005382;
+    z-index: 2;
+    overflow: auto;
+    padding-right: 100px;
+    /* Header'ın yüksekliğine bağlı olarak ayarlanmalı */
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .modal {
+    position: fixed;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #005382;
+    z-index: 2;
+    overflow: auto;
+    padding-right: 0;
+    /* Header'ın yüksekliğine bağlı olarak ayarlanmalı */
+  }
+}
