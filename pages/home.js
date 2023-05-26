@@ -31,27 +31,6 @@ const Home = () => {
     });
   }, []);
 
-  const bottomBreakPoints = {
-    500: 15,
-    1154: 4,
-    1340: 6,
-    1615: 7,
-    1743: 8,
-    2000: 9,
-  };
-
-  const bottomItemCount = useItemCount(bottomBreakPoints, 9);
-  const breakPoints = {
-    500: 15,
-    945: 20,
-    1150: 20,
-    1350: 30,
-    1615: 20,
-    1800: 25,
-    2200: 30,
-  };
-
-  const itemsToShow = useItemCount(breakPoints, 30);
   if (loading) {
     return (
       <>
@@ -70,13 +49,22 @@ const Home = () => {
         </div>
 
         <div className={styles.gridContainer}>
-          <GameGrid games={games} itemsToShow={itemsToShow} />
-          <div className={styles.multiplayerCardSection}>
-            <div className={styles.swiperSection}>
-              <MultiplayerSwiper />
+          <div className={styles.normalGrid}>
+            <GameGrid games={games} itemsToShow={30} key={games.id} />
+            <div className={styles.multiplayerCardSection}>
+              <div className={styles.swiperSection}>
+                <MultiplayerSwiper />
+              </div>
             </div>
           </div>
-
+          <div className={styles.responsiveGrid}>
+            <GameGrid games={games} itemsToShow={15} key={games.id} />
+            <div className={styles.multiplayerCardSection}>
+              <div className={styles.swiperSection}>
+                <MultiplayerSwiper />
+              </div>
+            </div>
+          </div>
           <div className={styles.categorySection}>
             <div className={styles.categoryGrid}>
               {categories.map((category) => (
@@ -94,13 +82,13 @@ const Home = () => {
 
           <div className={styles.bottomResGrid}>
             <div className={styles.bottomResGridItem}>
-              <GameGrid games={games} itemsToShow={bottomItemCount} />
+              <GameGrid games={games} itemsToShow={15} key={games.id} />
             </div>
           </div>
 
           <div className={styles.bottomGrid}>
             <div className={styles.bottomGridItem}>
-              <GameGrid games={games} itemsToShow={bottomItemCount} />
+              <GameGrid games={games} itemsToShow={9} key={games.id} />
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ import Ad from "../../components/Ad/Ad";
 import Spinner from "../../components/Spinner/Spinner";
 import GameGrid from "@/components/GameGrid/GameGrid";
 import useFetchGames from "@/pages/hooks/useFetchGames";
-import MultiplayerCard from "@/components/MultiplayerSection/MultiplayerCard";
+import MultiplayerSwiper from "@/components/MultiplayerSection/MultiplayerSwiper";
 
 const Game = () => {
   const router = useRouter();
@@ -36,7 +36,6 @@ const Game = () => {
         .then((response) => {
           const { data } = response;
           if (data.data) {
-            console.log("Game data: ", data.data);
             setGame(data.data);
             setLoading(false);
           }
@@ -75,12 +74,13 @@ const Game = () => {
                     games={games}
                     itemsToShow={15}
                     excludedGameId={game.id}
+                    key={game.id}
                   />
                 </div>
 
                 <div className={styles.multiplayerCardSection}>
                   <div className={`${styles.multiplayerCard}`}>
-                    <MultiplayerCard />
+                    <MultiplayerSwiper />
                   </div>
                 </div>
 

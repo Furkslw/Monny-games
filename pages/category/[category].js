@@ -5,7 +5,7 @@ import styles from "./category.module.css";
 import Header from "../../components/Header/Header";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import Ad from "../../components/Ad/Ad";
-import MultiplayerCard from "../../components/MultiplayerSection/MultiplayerCard";
+import MultiplayerSwiper from "@/components/MultiplayerSection/MultiplayerSwiper";
 import Spinner from "../../components/Spinner/Spinner";
 import GameGrid from "@/components/GameGrid/GameGrid";
 import useItemCount from "@/pages/hooks/useItemCount";
@@ -131,7 +131,7 @@ const Category = () => {
             <GameGrid games={games} itemsToShow={itemsToShow} />
             <div className={styles.multiplayerCardSection}>
               <div className={`${styles.multiplayerCard}`}>
-                <MultiplayerCard />
+                <MultiplayerSwiper />
               </div>
             </div>
             <div className={styles.categorySectionMobile}>

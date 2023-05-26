@@ -18,7 +18,12 @@ const GameGrid = ({ itemsToShow, games, excludedGameId }) => {
     <>
       {gamesToRender &&
         gamesToRender.map((game) => (
-          <GameGridItem id={game.id} slug={game.slug} gameTitle={game.title} />
+          <GameGridItem
+            id={game.id}
+            slug={game.slug}
+            gameTitle={game.title}
+            key={game.id}
+          />
         ))}
     </>
   );

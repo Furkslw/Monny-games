@@ -17,7 +17,6 @@ const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
       }
     });
   }, []);
-  const game = useFindGame();
 
   const handleClick = () => {
     router.push(`/category/${categoryTitle}`);

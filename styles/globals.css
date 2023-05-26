@@ -1,5 +1,10 @@
 @import url("https://fonts.cdnfonts.com/css/fredoka-one");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+@font-face {
+  font-family: "Supercell Magic";
+  src: url("/fonts/supercell-magic.ttf") format("truetype");
+}
+
 html,
 body {
   font-family: "Fredoka One", sans-serif;

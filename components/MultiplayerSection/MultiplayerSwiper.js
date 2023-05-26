@@ -7,7 +7,7 @@ import { Navigation } from "swiper";
 import "swiper/css";
 
 const MultiplayerSwiper = () => {
-  const [cardsCount, setCardsCount] = useState(3);
+  const [cardsCount, setCardsCount] = useState(2);
   const [columns, setColumns] = useState([]);
   const swiperRef = useRef();
   const swiper = useSwiper();

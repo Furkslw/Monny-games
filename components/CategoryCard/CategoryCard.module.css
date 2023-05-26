@@ -101,6 +101,10 @@
 .viewAllButton {
   display: none;
 }
+.viewAllButton img {
+  width: 8px;
+  height: 14px;
+}
 
 @media screen and (max-width: 500px) {
   .categoryCard {
