@@ -7,8 +7,6 @@ import MultiplayerSwiper from "../components/MultiplayerSection/MultiplayerSwipe
 import CategoryCard from "../components/CategoryCard/CategoryCard";
 import Ad from "../components/Ad/Ad";
 import GameGrid from "../components/GameGrid/GameGrid";
-
-import useItemCount from "./hooks/useItemCount";
 import useFetchGames from "./hooks/useFetchGames";
 import Spinner from "../components/Spinner/Spinner";
 
@@ -16,6 +14,7 @@ const Home = () => {
   /* Context'ten gelen oyun ve kategori bilgileri */
   const { categories } = useContext(GameContext);
   const [games, setGames] = useState([]);
+  const [bottomGames, setBottomGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const { getGames } = useFetchGames();
 
@@ -25,7 +24,9 @@ const Home = () => {
       const { data } = response;
       console.log("Response : ", response);
       if (data.data) {
-        setGames(data.data);
+        const midIndex = Math.floor(data.data.length / 2); // Listeyi ikiye böleceğiz
+        setGames(data.data.slice(0, midIndex)); // İlk yarısını normal grid'de gösteririz
+        setBottomGames(data.data.slice(midIndex)); // İkinci yarısını bottom grid'de gösteririz
         setLoading(false);
       }
     });
@@ -50,7 +51,7 @@ const Home = () => {
 
         <div className={styles.gridContainer}>
           <div className={styles.normalGrid}>
-            <GameGrid games={games} itemsToShow={30} key={games.id} />
+            <GameGrid games={games} itemsToShow={games.length} key={games.id} />
             <div className={styles.multiplayerCardSection}>
               <div className={styles.swiperSection}>
                 <MultiplayerSwiper />
@@ -88,7 +89,11 @@ const Home = () => {
 
           <div className={styles.bottomGrid}>
             <div className={styles.bottomGridItem}>
-              <GameGrid games={games} itemsToShow={9} key={games.id} />
+              <GameGrid
+                games={bottomGames}
+                itemsToShow={bottomGames.length}
+                key={games.id}
+              />
             </div>
           </div>
         </div>

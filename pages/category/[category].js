@@ -18,36 +18,23 @@ const Category = () => {
   const { category } = router.query;
   const { categories } = useContext(GameContext);
   const [games, setGames] = useState([]);
+  const [bottomGames, setBottomGames] = useState([]);
 
   useEffect(() => {
     getGames().then((response) => {
       const { data } = response;
       if (data.data) {
-        setGames(data.data);
+        const initialGames = data.data.slice(0, 30);
+        const remainingGames = data.data.slice(30);
+
+        setGames(initialGames);
+        setBottomGames(remainingGames);
       }
     });
   }, []);
-  const breakPoints = {
-    500: 15,
-    945: 5,
-    1150: 5,
-    1350: 15,
-    1615: 20,
-    1800: 25,
-    2200: 30,
-  };
-  const itemsToShow = useItemCount(breakPoints, 30);
-
-  const bottomBreakPoints = {
-    1154: 4,
-    1350: 6,
-    1615: 7,
-    1743: 8,
-  };
 
   const activeCategory = categories.find((cat) => cat.title === category);
   const gamesInCategory = activeCategory ? activeCategory.games : [];
-  const bottomItemCount = useItemCount(bottomBreakPoints, 9);
 
   const titleImage = category ? `/${category}.png` : "";
   if (!games.length) {
@@ -105,7 +92,7 @@ const Category = () => {
               </div>
 
               <div className={styles.gridLarge}>
-                <GameGrid games={games} itemsToShow={24} />
+                <GameGrid games={bottomGames} itemsToShow={24} />
               </div>
             </div>
             <div className={styles.adBot}>
@@ -128,7 +115,7 @@ const Category = () => {
             </div>
           )}
           <div className={styles.gridContainer}>
-            <GameGrid games={games} itemsToShow={itemsToShow} />
+            <GameGrid games={games} itemsToShow={15} />
             <div className={styles.multiplayerCardSection}>
               <div className={`${styles.multiplayerCard}`}>
                 <MultiplayerSwiper />
@@ -151,7 +138,7 @@ const Category = () => {
 
             <div className={styles.bottomResGrid}>
               <div className={styles.bottomResGridItem}>
-                <GameGrid games={games} itemsToShow={itemsToShow} />
+                <GameGrid games={bottomGames} itemsToShow={15} />
               </div>
             </div>
           </div>

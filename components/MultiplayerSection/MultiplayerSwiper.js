@@ -39,7 +39,7 @@ const MultiplayerSwiper = () => {
   return (
     <div className={styles.swiperContainer}>
       <div className={styles.titleContainer}>
-        <h2 className={styles.title}>Multiplayer</h2>
+        <h1>Multiplayer</h1>
         <div className={styles.button}>
           <img
             src="/backarrow.png"

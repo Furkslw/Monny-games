@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "./GameGridItem.module.css";
 
-const GameGridItem = ({ gameTitle, slug, id }) => {
+const GameGridItem = ({ gameTitle, slug, id, key }) => {
   const router = useRouter();
   const createImageUrl = (slug) => {
     return `https://assets.humoq.com/cdn-cgi/image/quality=78,fit=cover,f=auto,width=256/images/h140/${slug}.webp`;
