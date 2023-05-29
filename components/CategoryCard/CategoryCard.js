@@ -17,7 +17,6 @@ const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
       }
     });
   }, []);
-  const game = useFindGame();
 
   const handleClick = () => {
     router.push(`/category/${categoryTitle}`);
@@ -30,9 +29,10 @@ const CategoryCard = ({ categoryTitle, categoryIcon, iconSize }) => {
           alt={`${categoryTitle} icon`}
           style={{ ...iconSize }}
         />
-        <h2 className={styles.categoryTitle}>
+
+        <p className={styles.titleText}>
           {categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1)}
-        </h2>
+        </p>
       </div>
       <div className={styles.gridSection}>
         <div className={styles.gameGridItems}>

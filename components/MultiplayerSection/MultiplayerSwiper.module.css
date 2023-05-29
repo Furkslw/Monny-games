@@ -10,22 +10,13 @@
   height: 710px;
 }
 
-.title {
+.titleContainer h1 {
   font-family: "Fredoka One";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   text-align: center;
-  color: #ffffff;
-}
-
-.arrow {
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  padding: 0 10px;
-  cursor: pointer;
   color: #ffffff;
 }
 
@@ -49,15 +40,78 @@
 }
 
 @media screen and (max-width: 500px) {
+  .swiperContainer {
+    justify-self: center;
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 608px;
+    border-radius: 0;
+  }
+  .titleContainer h1 {
+    font-size: 18.43px !important;
+  }
+
+  .button img {
+    width: 21px !important;
+    height: 21px !important;
+  }
+  .button {
+    gap: 5px;
+  }
+  .gameCards {
+    width: 100%;
+    height: 100%;
+  }
+  .gameCards img {
+    width: 302px !important;
+    height: 155px !important;
+  }
+  .titleContainer {
+    gap: 5px;
+  }
 }
 
+@media screen and (max-width: 400px) {
+  .swiperContainer {
+    justify-self: center;
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 393px;
+    border-radius: 0;
+  }
+}
+/* 300 den sonra multiplayer card anlamsız bir şekilde küçülüyor. */
 @media screen and (max-width: 300px) {
-  .card {
+  .swiperContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 393px;
+    height: 300px;
+    border-radius: 0;
+  }
+  .title {
+    font-size: 18.43px !important;
+    line-height: 19px !important;
+  }
+  .button img {
+    width: 21px;
+    height: 21px;
+  }
+  .button {
+    gap: 5px;
+  }
+  .gameCards {
+    width: 100%;
+    height: 100%;
   }
   .gameCards img {
     width: 100%;
     height: 100%;
+  }
+  .titleContainer {
+    gap: 5px;
   }
 }

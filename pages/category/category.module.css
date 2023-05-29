@@ -234,6 +234,7 @@
     gap: 20px;
   }
 }
+
 @media screen and (max-width: 600px) {
   .topGrid {
     display: grid;
@@ -267,6 +268,7 @@
   }
 }
 
+
 @media screen and (max-width: 1813px) {
   .main {
     padding: 29px 50px 0 50px;
@@ -290,7 +292,7 @@
 
 /* Mobile responsive */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .main {
     padding: 20px 1rem;
   }
@@ -311,7 +313,7 @@
   .gridContainer {
     display: grid;
     grid-template-columns: repeat(3, 102.57px);
-    grid-template-rows: repeat(44, 102.6px);
+    grid-template-rows: repeat(43, 102.6px);
     width: 100%;
     gap: 10px;
     grid-auto-flow: dense;
@@ -319,6 +321,7 @@
   }
 
   .multiplayerCardSection {
+    align-self: flex-start;
     justify-self: center;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -334,15 +337,16 @@
     justify-self: center;
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 15;
-    grid-row-end: 45;
+    grid-row-start: 14;
+    grid-row-end: 44;
+    margin-top: 1rem;
   }
 
   .categoryGridMobile {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 15;
-    grid-row-end: 45;
+    grid-row-end: 44;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
@@ -361,10 +365,11 @@
   }
 
   .bottomResGrid {
+    margin-top: 4.2rem;
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 10;
-    grid-row-end: 16;
+    grid-row-start: 9;
+    grid-row-end: 15;
   }
 
   .bottomResGridItem {
@@ -375,7 +380,7 @@
   }
 }
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 345px) {
   .titleSection h2 {
     font-size: 22px;
     text-align: left;

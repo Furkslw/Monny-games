@@ -14,7 +14,7 @@
   grid-template-rows: repeat(35, 198px);
 }
 
-.main h2 {
+.gameTitle {
   font-size: 40px;
   text-align: left;
   margin-bottom: 20px;
@@ -24,6 +24,9 @@
   font-size: 24px;
   color: #005382;
   margin-bottom: 20px;
+}
+.gameTitle img {
+  display: none;
 }
 
 .topGrid {
@@ -259,6 +262,31 @@
 }
 
 @media screen and (max-width: 500px) {
+  .gameTitle {
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+    padding-top: 10px;
+    padding-left: 19px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  .gameTitle img {
+    display: block;
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+  }
+  .gameTitle h2 {
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+  }
+  .container {
+    padding-top: 0;
+  }
+
   .main {
     padding: 0;
   }
@@ -459,18 +487,6 @@
     grid-column-end: 4;
     grid-row-start: 15;
     grid-row-end: 45;
-  }
-
-  .categoryGridMobile {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 15;
-    grid-row-end: 45;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 20px;
-    align-items: center; /* Grid içindeki öğeleri dikey olarak ortalar */
-    justify-items: center; /* Grid içindeki öğeleri yatay olarak ortalar */
   }
 
   .categoryCard {
