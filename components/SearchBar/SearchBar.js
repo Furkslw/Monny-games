@@ -21,7 +21,7 @@ const SearchBar = () => {
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       {!inputValue && <div className={styles.placeholder}>Search</div>}
-      <Link href={"/scenes/searchscreen"}>
+      <Link href={"searchscreen"}>
         <img src="/search.png" alt="search" onClick={handleSearchClick} />
       </Link>
     </div>

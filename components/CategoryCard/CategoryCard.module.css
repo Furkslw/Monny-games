@@ -183,6 +183,7 @@
     justify-content: center;
     align-items: center;
     display: grid;
+
     grid-template-columns: repeat(3, 78.6px);
     grid-template-rows: repeat(15, 78.6px);
   }
@@ -192,5 +193,8 @@
     align-items: center;
     width: 78.6px;
     height: 78.6px;
+    grid-template-columns: repeat(3, 102.6px);
+    grid-template-rows: repeat(15, 102.6px);
+    padding-top: 0;
   }
 }

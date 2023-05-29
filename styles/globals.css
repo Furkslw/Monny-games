@@ -3,6 +3,10 @@
 @font-face {
   font-family: "Supercell Magic";
   src: url("/fonts/supercell-magic.ttf") format("truetype");
+  src: url("../public/fonts/supercell-magic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 html,

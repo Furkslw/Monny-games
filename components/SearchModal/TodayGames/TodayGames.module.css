@@ -1,3 +1,10 @@
+.todayGames h2 {
+  font-size: 24px;
+  font-family: "Supercell Magic", sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 1155px) {
   .games {
     display: grid;
